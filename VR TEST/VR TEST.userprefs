@@ -1,7 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PickupParent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/flickering_light.cs">
     <Files>
+      <File FileName="Assets/flickering_light.cs" Line="15" Column="31" />
       <File FileName="Assets/Scripts/PickupParent.cs" Line="11" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
