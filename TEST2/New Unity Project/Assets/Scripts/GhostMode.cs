@@ -7,21 +7,31 @@ public class GhostMode : MonoBehaviour {
 	Shader ghostShader;
 
 	Renderer rend;
+    MeshRenderer meshRend;
+    public bool dontRender = false;
 
 
 	// Use this for initialization
 	void Start () {
 		rend = GetComponent<Renderer>();
-		originalShader = rend.material.shader;
+        meshRend = GetComponent<MeshRenderer>();
+        originalShader = rend.material.shader;
 		ghostShader = Shader.Find ("Ciconia Studio/Effects/Ghost/Old version(1.2)/Ghost Animated Details");
-		Debug.Log (PlayerScript.ghostMode);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (PlayerScript.ghostMode) {
-			rend.material.shader = ghostShader;
+            if (dontRender)
+            {
+                meshRend.enabled = false;
+            } else
+            {
+                rend.material.shader = ghostShader;
+            }
+			
 		} else {
+            meshRend.enabled = true;
 			rend.material.shader = originalShader;
 		}
 	}

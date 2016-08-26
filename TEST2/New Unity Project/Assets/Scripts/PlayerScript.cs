@@ -1,9 +1,11 @@
 ﻿ using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour {
 
 	public static bool ghostMode = false;
+    public bool viewGhost = false;
 
 	// Use this for initialization
 	void Start () {
@@ -12,14 +14,15 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        viewGhost = ghostMode;
 	}
 
 	void OnCollisionEnter (Collision col)
 	{
+        Debug.Log(col.gameObject.name);
 		if (col.gameObject.name == "ZombiePortal")
 		{
-			Application.LoadLevel ("Zombie");
+            SceneManager.LoadScene("Zombie");
 		} 
 		if(col.gameObject.name == "NormalPortal")
 		{
