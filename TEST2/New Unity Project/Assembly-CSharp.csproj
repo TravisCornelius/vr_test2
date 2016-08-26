@@ -46,13 +46,18 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BasicVRHands\Scripts\HandController.cs" />
-     <Compile Include="Assets\CameraScript.cs" />
+     <Compile Include="Assets\GhostPortalScript.cs" />
      <Compile Include="Assets\Lockers\Scripts\ClickCodeRollInteractor.cs" />
      <Compile Include="Assets\Lockers\Scripts\Locker.cs" />
      <Compile Include="Assets\Lockers\Scripts\LockerClickInteractor.cs" />
      <Compile Include="Assets\Lockers\Scripts\LockerInteractor.cs" />
      <Compile Include="Assets\Lockers\Scripts\Misc\CameraFocusSwitcher.cs" />
      <Compile Include="Assets\Lockers\Scripts\Misc\LockersTestUI.cs" />
+     <Compile Include="Assets\NormalPortalScript.cs" />
+     <Compile Include="Assets\Scripts\CameraScript.cs" />
+     <Compile Include="Assets\Scripts\GhostMode.cs" />
+     <Compile Include="Assets\Scripts\NormalMode.cs" />
+     <Compile Include="Assets\Scripts\PlayerScript.cs" />
      <Compile Include="Assets\SpellCraft Assets\Demo\Scripts\SC_ClickButton.cs" />
      <Compile Include="Assets\SpellCraft Assets\Demo\Scripts\SC_EffectsModeDemo.cs" />
      <Compile Include="Assets\SpellCraft Assets\Demo\Scripts\SC_ToggleButton.cs" />
