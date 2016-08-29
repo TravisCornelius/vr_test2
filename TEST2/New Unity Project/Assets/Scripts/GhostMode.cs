@@ -7,15 +7,16 @@ public class GhostMode : MonoBehaviour {
 	Shader ghostShader;
 
 	Renderer rend;
-    MeshRenderer meshRend;
+    SkinnedMeshRenderer meshRend;
     public bool dontRender = false;
 
 
 	// Use this for initialization
 	void Start () {
 		rend = GetComponent<Renderer>();
-        meshRend = GetComponent<MeshRenderer>();
+        meshRend = GetComponent<SkinnedMeshRenderer>();
         originalShader = rend.material.shader;
+        Debug.Log(originalShader);
 		ghostShader = Shader.Find ("Ciconia Studio/Effects/Ghost/Old version(1.2)/Ghost Animated Details");
 	}
 	

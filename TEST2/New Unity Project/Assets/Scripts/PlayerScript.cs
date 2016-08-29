@@ -14,7 +14,8 @@ public class PlayerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        viewGhost = ghostMode;
+        //viewGhost = ghostMode;
+        ghostMode = viewGhost;
 	}
 
 	void OnCollisionEnter (Collision col)
