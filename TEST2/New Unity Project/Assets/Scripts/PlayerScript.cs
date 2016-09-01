@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour {
 
 	public static bool ghostMode = false;
     public bool viewGhost = false;
+	public static bool solvedPuzzle1 = false;
 
 	// Use this for initialization
 	void Start () {
@@ -15,7 +16,8 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //viewGhost = ghostMode;
-        ghostMode = viewGhost;
+		//ghostMode = solvedPuzzle1;
+		solvedPuzzle1 = viewGhost;
 	}
 
 	void OnCollisionEnter (Collision col)

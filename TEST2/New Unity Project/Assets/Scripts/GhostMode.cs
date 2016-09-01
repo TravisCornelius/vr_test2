@@ -7,33 +7,44 @@ public class GhostMode : MonoBehaviour {
 	Shader ghostShader;
 
 	Renderer rend;
-    SkinnedMeshRenderer meshRend;
     public bool dontRender = false;
+	Rigidbody rb;
 
 
 	// Use this for initialization
 	void Start () {
-		rend = GetComponent<Renderer>();
-        meshRend = GetComponent<SkinnedMeshRenderer>();
+		rb = GetComponent<Rigidbody>();
+		rend = GetComponent<Renderer>();        
         originalShader = rend.material.shader;
-        Debug.Log(originalShader);
 		ghostShader = Shader.Find ("Ciconia Studio/Effects/Ghost/Old version(1.2)/Ghost Animated Details");
+		DisablePhysics ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (PlayerScript.ghostMode) {
+		if (!PlayerScript.ghostMode) {
             if (dontRender)
             {
-                meshRend.enabled = false;
+                rend.enabled = false;
             } else
             {
                 rend.material.shader = ghostShader;
+				rend.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
             }
-			
+			DisablePhysics ();
 		} else {
-            meshRend.enabled = true;
+            rend.enabled = true;
 			rend.material.shader = originalShader;
+			rend.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+			EnablePhysics ();
 		}
+	}
+	void EnablePhysics() {
+		rb.isKinematic = false;
+		rb.detectCollisions = true;
+	}
+	void DisablePhysics() {
+		rb.isKinematic = true;
+		rb.detectCollisions = false;
 	}
 }
